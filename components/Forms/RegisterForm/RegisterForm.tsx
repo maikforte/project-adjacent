@@ -1,5 +1,6 @@
 // React
 import { useState } from "react";
+import Link from "next/link";
 // Mantine
 import { Button, LoadingOverlay, PasswordInput, TextInput } from "@mantine/core";
 import { hasLength, useForm, UseFormReturnType } from "@mantine/form";
@@ -97,6 +98,17 @@ export default function RegisterForm(props: { register: (form: any) => void }) {
 					miw={"100%"}
 				>
 					Register
+				</Button>
+
+				<Button
+					mt="md"
+					size="md"
+					miw={"100%"}
+					variant="outline"
+					href="/login"
+					component={Link}
+				>
+					Return to Login
 				</Button>
 			</form>
 		</>

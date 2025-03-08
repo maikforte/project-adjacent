@@ -1,7 +1,8 @@
 "use client";
 
+// Styles
+import classes from "./page.module.scss";
 // Components
-import { Box, Center } from "@mantine/core";
 import { UseFormReturnType } from "@mantine/form";
 import RegisterForm from "@/components/Forms/RegisterForm/RegisterForm";
 // Services

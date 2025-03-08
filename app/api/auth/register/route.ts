@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 
 const prisma = new PrismaClient();
 
-export const POST = async (req: NextRequest, res: NextResponse) => {
+export const POST = async (req: NextRequest) => {
 	const reqBody = await req.json();
 	const saltRounds = 5;
 	const salt = bcrypt.genSaltSync(saltRounds);
