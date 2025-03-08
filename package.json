@@ -17,12 +17,20 @@
 		"prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
 		"test": "npm run prettier:check && npm run lint && npm run typecheck && npm run jest",
 		"storybook": "storybook dev -p 6006",
-		"storybook:build": "storybook build"
+		"storybook:build": "storybook build",
+		"prisma-generate": "npx prisma generate",
+		"prisma-format": "npx prisma format",
+		"prisma-seed": "npx prisma db seed",
+		"prisma-reset": "npx prisma migrate reset --force"
+	},
+	"prisma": {
+		"seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
 	},
 	"dependencies": {
 		"@mantine/core": "7.17.1",
 		"@mantine/hooks": "7.17.1",
 		"@next/bundle-analyzer": "^15.1.5",
+		"@prisma/client": "^6.4.1",
 		"@tabler/icons-react": "^3.28.1",
 		"next": "15.1.5",
 		"react": "19.0.0",
@@ -40,7 +48,7 @@
 		"@testing-library/user-event": "^14.6.0",
 		"@types/eslint-plugin-jsx-a11y": "^6",
 		"@types/jest": "^29.5.14",
-		"@types/node": "^22.10.7",
+		"@types/node": "^22.13.10",
 		"@types/react": "19.0.7",
 		"babel-loader": "^9.2.1",
 		"eslint": "^9.18.0",
@@ -53,12 +61,14 @@
 		"postcss-preset-mantine": "1.17.0",
 		"postcss-simple-vars": "^7.0.1",
 		"prettier": "^3.4.2",
+		"prisma": "^6.4.1",
 		"storybook": "^8.5.0",
 		"storybook-dark-mode": "^4.0.2",
 		"stylelint": "^16.13.2",
 		"stylelint-config-standard-scss": "^14.0.0",
 		"ts-jest": "^29.2.5",
-		"typescript": "5.7.3",
+		"tsx": "^4.19.3",
+		"typescript": "^5.7.3",
 		"typescript-eslint": "^8.20.0"
 	},
 	"packageManager": "yarn@4.7.0"
