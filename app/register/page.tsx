@@ -7,6 +7,7 @@ import { UseFormReturnType } from "@mantine/form";
 import RegisterForm from "@/components/Forms/RegisterForm/RegisterForm";
 // Services
 import AuthenticationService from "@/services/authentication.service";
+// Types
 import { RegisterUserForm } from "@/types/types";
 
 export default function Register() {

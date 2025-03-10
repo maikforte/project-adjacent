@@ -15,3 +15,8 @@ export interface RegisterUserForm {
 	lastName: string;
 	confirmPassword: string;
 }
+
+export interface LoginUserForm {
+	email: string;
+	password: string;
+}
