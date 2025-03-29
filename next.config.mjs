@@ -12,6 +12,7 @@ export default withBundleAnalyzer({
 	},
 	experimental: {
 		optimizePackageImports: ["@mantine/core", "@mantine/hooks"],
+		serverActions: true,
 	},
 	sassOptions: {
 		implementation: "sass-embedded",

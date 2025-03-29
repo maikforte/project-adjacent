@@ -7,6 +7,9 @@ const prisma = new PrismaClient();
 export const POST = async (req: NextRequest) => {
 	const reqBody = await req.json();
 
+	console.log("TEST");
+	console.log(reqBody);
+
 	const comparatorUser = await prisma.user.findFirst({
 		select: {
 			password: true,
@@ -32,12 +35,11 @@ export const POST = async (req: NextRequest) => {
 			email: true,
 			firstName: true,
 			lastName: true,
-			userType: true,
 		},
 		where: {
 			email: reqBody.email,
 		},
 	});
 
-	return NextResponse.json("Logged in successfully!", { status: 200 });
+	return NextResponse.json(user, { status: 200 });
 };

@@ -11,8 +11,6 @@ import AuthenticationService from "@/services/authentication.service";
 import { LoginUserForm } from "@/types/types";
 // Next
 import { useRouter } from "next/navigation";
-import { Button } from "@mantine/core";
-import { getSession } from "@/lib/lib";
 
 export default function Login() {
 	const authService = new AuthenticationService();
@@ -40,11 +38,6 @@ export default function Login() {
 			console.error(error);
 			return false; // User login failed
 		}
-	};
-
-	const test = async () => {
-		const a = await getSession();
-		console.log(a);
 	};
 
 	return (
