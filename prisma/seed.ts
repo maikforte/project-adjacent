@@ -1,4 +1,4 @@
-import { PrismaClient, UserType } from "@prisma/client";
+import { PrismaClient, Role } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -12,7 +12,7 @@ async function main() {
 			firstName: "Maik",
 			lastName: "Maik",
 			password: "$2b$05$rV5dzsnw/BsnKTWjLdWjrO6hHJ/8UMci0z3NVS0F1xfT0HUPLRZIq", // wRkW114dM1n
-			userType: UserType.ADMIN,
+			role: Role.ADMIN,
 		},
 	});
 }

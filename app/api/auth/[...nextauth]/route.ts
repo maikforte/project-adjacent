@@ -1,8 +1,12 @@
+import { PrismaAdapter } from "@auth/prisma-adapter";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GitHubProvider from "next-auth/providers/github";
+import { prisma } from "@/prisma/prisma";
 
 export const authOptions = {
+	session: { strategy: "jwt" },
+	adapter: PrismaAdapter(prisma),
 	providers: [
 		GitHubProvider({
 			clientId: process.env.GITHUB_ID ?? "",
@@ -23,7 +27,6 @@ export const authOptions = {
 				const user = await res.json();
 
 				if (res.ok && user) {
-					console.log(user);
 					return user;
 				}
 
